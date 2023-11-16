@@ -1,24 +1,24 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: content-box;
 }
-header{
-    padding: 5px;
+header {
+    padding: 10px 5px;
     border-bottom: 1px solid grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #d2691e;
-    padding: 10px 5px;
 }
-.logo{
+
+.logo {
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    margin: 0px;
+    height: 80px; 
+    width: 80px; 
+    margin: 0;
 }
 a{
-    background-color: rgb(255, 127, 127);
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
@@ -28,9 +28,13 @@ a{
     padding: 17px 25px;
 }
 .center-div a{
-    background-color: blue;
     color: white;
     border: none;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+    color: aqua;
 }
 button{
     background-color: rgb(255, 127, 127);
@@ -43,17 +47,36 @@ button{
     padding: 17px 25px;
 }
 
-.second-container img{
-    width: 420px;
-    margin: 0 20px;
+.banner{
+    width: 100%;
+    height: 500px;
 }
-#main-container{
+
+.second-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.second-container img {
+    width: 100%; 
+    max-width: 420px; 
+    height: auto; 
+    margin: 0 10px; 
+}
+
+
+#main-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     row-gap: 20px;
     column-gap: 20px;
     padding: 20px;
 }
+
+
 .product-container{
     padding: 10px;
     border: 1px solid grey;
@@ -105,8 +128,39 @@ footer .center-div{
     margin-top: 40px;
 }
 footer i{
-    color: blue;
+    color: white;
     font-size: 30px;
     margin: 20px 5px;
     cursor:pointer
+}
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    #main-container {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+    .second-container{
+        justify-content: center;
+    }
+    .second-container img {
+        max-width: 90%; 
+        margin: 0 0 10px 0; 
+    }
+    .banner{
+        height: 200px;
+    }
+    .logo {
+        height: 60px; 
+        width: 60px; 
+    }
+    .center-div{
+        display: flex;
+    }
+    .center-div a{
+        padding: 5px 10px;
+    }
 }

@@ -14,16 +14,22 @@ function ratingColor(rating) {
     }
 }
 const FOOD_IMAGE_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+const urlPhone ="https://www.swiggy.com/mapi/homepage/getCards?lat=30.9579652&lng=75.7487779"
+const urlLaptop = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.9579652&lng=75.7487779&page_type=DESKTOP_WEB_LISTING";
+
+const width = window.screen.width;
+const url =  width > 768 ? urlLaptop : urlPhone;
+
 
 async function renderProduct() {
-  await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.9579652&lng=75.7487779&page_type=DESKTOP_WEB_LISTING")
+  await fetch(url)
     .then((data) => {
       return data.json();
     })
     .then((data2) => {
-        console.log(data2.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        mainContainer.innerHTML = "";
-        let finalData = data2.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      mainContainer.innerHTML = "";
+        console.log(data2?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+        const finalData =  width > 768 ? data2?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants : data2?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
       for (let item of finalData) {
         const product = document.createElement("div");
         product.innerHTML = `
