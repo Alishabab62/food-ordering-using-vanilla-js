@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    padding: 5px;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d2691e;
+    padding: 10px 5px;
+}
+.logo{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 0px;
+}
+a{
+    background-color: rgb(255, 127, 127);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 17px 25px;
+}
+.center-div a{
+    background-color: blue;
+    color: white;
+    border: none;
+}
+button{
+    background-color: rgb(255, 127, 127);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 17px 25px;
+}
+
+.second-container img{
+    width: 420px;
+    margin: 0 20px;
+}
+#main-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    row-gap: 20px;
+    column-gap: 20px;
+    padding: 20px;
+}
+.product-container{
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius:5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#main-container img{
+    width: 100%;
+    height: 230px;
+    border-radius: 5px;
+    margin:auto;
+    margin-bottom: 20px;
+}
+.product-container-shimmer {
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+}
+.product-container-shimmer .image-shimmer{
+    width: 100%;
+    height: 190px;
+    border-radius: 5px;
+    margin:auto;
+    margin-bottom: 20px;
+    background-color: rgba(128, 128, 128, 0.488);
+}
+.product-container-shimmer h2{
+    background-color: rgba(128, 128, 128, 0.488);
+    border-radius: 5px;
+}
+.product-container-shimmer p{
+    background-color: rgba(128, 128, 128, 0.488);
+    border-radius: 5px;
+    width: 75%;
+}
+footer{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid grey;
+    background-color: #d2691e;
+    padding: 10px 0px;
+}
+footer .center-div{
+    margin-top: 40px;
+}
+footer i{
+    color: blue;
+    font-size: 30px;
+    margin: 20px 5px;
+    cursor:pointer
+}

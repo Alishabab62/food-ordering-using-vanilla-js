@@ -1,0 +1,101 @@
+<!doctype HTML>
+    <html>
+<head>
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+*{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+.box{
+    width: 350px;
+    margin: 30px auto 30px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: brown;
+}
+form{
+    width: 100%;
+}
+form label{
+    display: flex;
+    margin-top: 2rem;
+    font-size: 15px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    color: white;
+}
+input{
+    width: 100%;
+    padding: 5px;
+    color: maroon;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    font-size: 15px;
+}
+
+#login {
+    text-decoration: none;
+    padding: 0;
+    background-color: brown;
+}
+.box button{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+    </style>
+</head>
+    <body>
+        <header>
+            <img src="./assests/logo.png" class="logo" alt="">
+            <div class="center-div">
+                <a href="./index.html">Home</a>
+                <a href="./products.html">Restaurants</a>
+                <!-- <a href="">About Us</a> -->
+                <!-- <a href="">Contact Us</a> -->
+            </div>
+            <div>
+                <a href="./signup.html">Log In</a>
+            </div>
+        </header>
+        <div class="box">
+            <h1>SIGN UP</h1>
+            <form>
+                <label >First Name</label>
+                <input type="text" placeholder="First Name">
+                <label>Last Name</label>
+                <input type="text" placeholder="Last Name">
+                <label>Username</label>
+                <input type="text" placeholder="Username">
+                <label>Email-id</label>
+                <input type="text" placeholder="Email-id">
+                <label>Password</label>
+                <input type="text" placeholder="Password">
+                <button>Sign Up</button>
+                <p style="margin-top: 10px; padding-left: 5px; font-size: 18px;"> Already user <a href="./login.html" id="login">Login</a> </p>
+            </form>
+        </div>
+        <footer>
+            <img src="./assests/logo.png" class="logo" alt="">
+            <div class="center-div">
+                <a href="/index.html">Home</a>
+                <a href="./products.html">Restaurants</a>
+                <!-- <a href="">About Us</a> -->
+                <!-- <a href="">Contact Us</a> -->
+            </div>
+            <div>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+            </div> 
+        </footer>
+    </body>
+    </html>
