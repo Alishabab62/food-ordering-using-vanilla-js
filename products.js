@@ -2,7 +2,6 @@ const mainContainer = document.getElementById("main-container");
 
 
 function ratingColor(rating) {
-
     if(rating > "4"){
       return "green"
     }
@@ -22,15 +21,24 @@ const url =  width > 768 ? urlLaptop : urlPhone;
 
 
 async function renderProduct() {
-  await fetch(url)
+  await fetch(urlLaptop)
     .then((data) => {
       return data.json();
     })
     .then((data2) => {
       mainContainer.innerHTML = "";
-        console.log(data2?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-        const finalData =  width > 768 ? data2?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants : data2?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
-      for (let item of finalData) {
+        // console.log(data2?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // const finalData =  width > 768 ? data2?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants : data2?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
+        // console.log(finalData)
+        let data = [];
+        for (let i = 0; i < 16; i++) {
+          const restaurantsData = data2?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+          if (restaurantsData) {
+            data = restaurantsData;
+            break;
+          }
+        }
+        for (let item of data) {
         const product = document.createElement("div");
         product.innerHTML = `
         <div class="product-container">
@@ -38,7 +46,7 @@ async function renderProduct() {
         <div>
             <h2 style="height:30px; overflow:hidden">${item.info.name}</h2>
             <p style="height:45px; overflow:hidden; margin:5px 0px">${item.info.cuisines.join(", ")}</p>
-            <div style="display:flex; background-color:${ratingColor(item.info.avgRating)}; width:fit-content; color:white; padding:10px; border-radius:5px"><h5>${item.info.avgRating} <i class="fa-regular fa-star" style="margin-right:5px"></i></h5></div>
+            <div style="display:flex; align-items:center "><h5 style="background-color:${ratingColor(item.info.avgRating)}; color:white; padding:10px; border-radius:5px; margin-right:5px;">${item.info.avgRating ? item.info.avgRating : 0} <i class="fa-regular fa-star" style=""></i></h5><h5 style="font-size:18px; padding:5px">${item.info.costForTwo}</h5><h5 style="font-size:18px; padding:5px">${item.info.locality}</h5></div>
             
         </div>
     </div>`;

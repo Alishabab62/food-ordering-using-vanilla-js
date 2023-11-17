@@ -144,14 +144,6 @@ footer i{
     #main-container {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     }
-    .second-container{
-    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
-    }
-    /*
-    .second-container img {
-        max-width: 90%; 
-        margin: 0 0 10px 0; 
-    } */
     .banner{
         height: 200px;
     }
