@@ -13,8 +13,8 @@ function ratingColor(rating) {
     }
 }
 const FOOD_IMAGE_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
-const urlPhone ="https://www.swiggy.com/mapi/homepage/getCards?lat=30.9579652&lng=75.7487779"
-const urlLaptop = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.9579652&lng=75.7487779&page_type=DESKTOP_WEB_LISTING";
+const urlPhone ="https://corsproxy.io/?https://www.swiggy.com/mapi/homepage/getCards?lat=30.9579652&lng=75.7487779"
+const urlLaptop = "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.9579652&lng=75.7487779&page_type=DESKTOP_WEB_LISTING";
 
 const width = window.screen.width;
 const url =  width > 768 ? urlLaptop : urlPhone;
@@ -27,9 +27,6 @@ async function renderProduct() {
     })
     .then((data2) => {
       mainContainer.innerHTML = "";
-        // console.log(data2?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        // const finalData =  width > 768 ? data2?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants : data2?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
-        // console.log(finalData)
         let data = [];
         for (let i = 0; i < 16; i++) {
           const restaurantsData = data2?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
